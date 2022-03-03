@@ -1,0 +1,29 @@
+.ball {
+  background-color: red;
+  border-color: black;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+}
+.start {
+  border-radius: 20%;
+  height: 100px;
+  width: 100px;
+  vertical-align: middle;
+  justify-content: center;
+}
+.start:disabled {
+  background-color: black;
+  color: white;
+  opacity: 100%;
+}
+html,
+body {
+  background-color: azure;
+  margin: 10;
+  height: 95%;
+}
+#wrapper {
+  height: 100%;
+  display: flex;
+}
