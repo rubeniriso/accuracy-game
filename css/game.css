@@ -1,29 +1,57 @@
 .ball {
-  background-color: red;
-  border-color: black;
+  background-image:radial-gradient(red, rgb(209, 44, 22), rgb(134, 32, 32));
   border-radius: 50%;
-  height: 100px;
-  width: 100px;
+  position: absolute;
+}
+
+nav{
+  width:100%;
+  background-color: grey;
+  border-style:solid;
+  border-color:darkgrey;
+}
+li{
+  vertical-align: super;
+  justify-content: center;
+  list-style:none;
+}
+p{
+  text-align:center;
+  width:auto;
+  height:auto;
+}
+ul{
+  margin: 0;
+  display:grid;
+  grid-template-columns: 10% 25% 25% 25%;
 }
 .start {
+  margin: 10px;
   border-radius: 20%;
   height: 100px;
   width: 100px;
   vertical-align: middle;
   justify-content: center;
+  transition: background-color 300ms ease-out 100ms, color 300ms ease-out 100ms;
+
 }
 .start:disabled {
   background-color: black;
+  size:40px;
   color: white;
   opacity: 100%;
+}
+.start:hover:enabled{
+  background-color: darkred;
+  color: white;
 }
 html,
 body {
   background-color: azure;
   margin: 10;
-  height: 95%;
+  height: 90%;
 }
 #wrapper {
   height: 100%;
-  display: flex;
+  width: 100%;
 }
