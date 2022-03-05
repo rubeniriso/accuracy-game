@@ -52,6 +52,7 @@ body {
   height: 90%;
 }
 #wrapper {
+  border: solid black;
   height: 100%;
   width: 100%;
 }
