@@ -60,7 +60,7 @@ function generateBalls(button) {
       const minSize = 20;
       ball.style.width = maxSize - minSize + "px";
       ball.style.height = maxSize - minSize + "px";
-      ball.value = ballId;
+      ball.id = ballId;
       positions = randomizePosition(parentWidth, parentHeight, difference);
       ball.style.left = positions[0];
       ball.style.top = positions[1];
