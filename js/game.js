@@ -2,7 +2,7 @@ function startGame(button) {
   randomizePosition();
   resetValues();
   button.disabled = true;
-  countdown = "60";
+  countdown = "40";
   button.value = countdown;
   generateBalls(button);
   var gameInterval = setInterval(function () {
@@ -47,7 +47,8 @@ function generateBalls(button) {
   bottom = parent.getBoundingClientRect().bottom;
   difference = Math.round(bottom - parentHeight);
   var gameInterval = setInterval(function () {
-    if (button.value < "10") {
+    if (parseInt(button.value) <= 5) {
+      console.log("ye");
       clearInterval(gameInterval);
     } else {
       increaseCounterByOne("generatedBalls");
