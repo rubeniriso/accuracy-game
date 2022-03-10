@@ -35,8 +35,8 @@ function startGame(button) {
     }
   }, 1000);
 }
-function randomizePosition(width, height, difference) {
-  xPosition = Math.round(Math.random() * width);
+function randomizePosition(width, height, difference, size) {
+  xPosition = Math.round(Math.random() * (width - size) + size);
   yPosition = Math.round(Math.random() * (height - difference) + difference);
   return [xPosition, yPosition];
 }
@@ -45,10 +45,10 @@ function generateBalls(button) {
   parentWidth = parent.getBoundingClientRect().width;
   parentHeight = parent.getBoundingClientRect().height;
   bottom = parent.getBoundingClientRect().bottom;
+  console.log(parent.getBoundingClientRect());
   difference = Math.round(bottom - parentHeight);
   var gameInterval = setInterval(function () {
     if (parseInt(button.value) <= 5) {
-      console.log("ye");
       clearInterval(gameInterval);
     } else {
       increaseCounterByOne("generatedBalls");
@@ -62,7 +62,12 @@ function generateBalls(button) {
       ball.style.width = maxSize - minSize + "px";
       ball.style.height = maxSize - minSize + "px";
       ball.id = ballId;
-      positions = randomizePosition(parentWidth, parentHeight, difference);
+      positions = randomizePosition(
+        parentWidth,
+        parentHeight,
+        difference,
+        maxSize
+      );
       ball.style.left = positions[0];
       ball.style.top = positions[1];
       parent.insertAdjacentElement("beforeend", ball);
